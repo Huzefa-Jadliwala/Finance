@@ -1,0 +1,45 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Portfolio
+{% endblock %}
+
+{% block main %}
+    <table class="table table-striped">
+  <thead>
+    <tr>
+      <th scope="col">Symbol</th>
+      <th scope="col">Name</th>
+      <th scope="col">Shares</th>
+      <th scope="col">Price</th>
+      <th scope="col">TOTAL</th>
+    </tr>
+  </thead>
+  <tbody>
+
+    <tr>
+        {% for row in rows %}
+      <th scope="row">{{row.company_name}}</th>
+      <td>{{row.name}}</td>
+      <td>{{row.share_holding}}</td>
+      <td>{{row.shares_price}}</td>
+      <td>{{row.price_of_share_holding}}</td>
+    </tr>
+    {% endfor %}
+    <tr>
+      <th scope="row">CASH</th>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td>{{cash}}</td>
+    </tr>
+    <tr>
+      <th scope="row"></th>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td><strong>{{balance}}</strong></td>
+    </tr>
+  </tbody>
+</table>
+{% endblock %}

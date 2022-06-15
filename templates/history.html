@@ -1,0 +1,28 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Portfolio
+{% endblock %}
+
+{% block main %}
+    <table class="table table-striped">
+  <thead>
+    <tr>
+      <th scope="col">Symbol</th>
+      <th scope="col">Shares</th>
+      <th scope="col">Price</th>
+      <th scope="col">Transacted</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for item in items %}
+        <tr>
+            <td>{{item.symbol}}</td>
+            <td>{{item.Shares}}</td>
+            <td>{{item.Price}}</td>
+            <td>{{item.Transacted}}</td>
+        </tr>
+    {% endfor %}
+  </tbody>
+</table>
+{% endblock %}
